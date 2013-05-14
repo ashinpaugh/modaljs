@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>Modal Test</title>
+
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js" type="text/javascript"></script>
+	<script src="../lib/js/logger.js" type="text/javascript"></script>
+	<script src="../lib/js/eventable.js" type="text/javascript"></script>
+	<script src="../lib/js/modal.js" type="text/javascript"></script>
+
+	<link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" type="text/css" rel="stylesheet" media="all" />
+	<link href="../lib/css/modal.css" type="text/css" rel="stylesheet" media="all" />
+
+	<style type="text/css">
+		.modalContent {
+			display: none;
+		}
+		.modalJS,
+		.modalMinimizedContainer {
+			font: 13px Arial, Helvetica Neue, Helvetica, sans-serif;
+		}
+		span.openModal {
+			background: none repeat scroll 0 0 #E4E4E4;
+			border: 1px solid #C4C4C4;
+			border-radius: 3px 3px 3px 3px;
+			box-shadow: 0 1px 1px #FFFFFF inset;
+			cursor: pointer;
+			display: block;
+			font: 13px/28px Arial;
+			margin: 0 auto 10px;
+			text-align: center;
+			width: 140px;
+		}
+			span.openModal:hover {
+				background:#ececec;
+			}
+			span.openModal:active {
+				box-shadow:inset 0px 2px 2px #d4d4d4;
+			}
+	</style>
+</head>
+
+<body>
+	<span class='openModal' data-title='ModalJS' data-theme=''>
+		Basic Modal
+		<span class="modalContent">
+			Phasellus nulla lectus, condimentum non pulvinar at, tempor ut ante. Pellentesque auctor purus eu urna commodo a euismod neque venenatis. Nunc id risus libero, eu eleifend urna. Donec pharetra pulvinar bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br /><br /> Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer a elit odio, non facilisis nulla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean rhoncus sem et ipsum mattis mattis. Nam suscipit eros nec ligula viverra nec commodo urna iaculis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+		</span>
+	</span>
+	<span class='openModal' data-title='ModalJS' data-theme='dark'>
+		Dark Modal
+		<span class="modalContent">
+			<ul><li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li><li>Aliquam tincidunt mauris eu risus.</li><li>Vestibulum auctor dapibus neque.</li></ul>
+		</span>
+	</span>
+	<span class='openModal' data-title='ModalJS' data-theme='ONEsite'>
+		ONEsite Theme
+		<span class="modalContent">
+			Phasellus nulla lectus, condimentum non pulvinar at, tempor ut ante. Pellentesque auctor purus eu urna commodo a euismod neque venenatis. Nunc id risus libero, eu eleifend urna. Donec pharetra pulvinar bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br /><br /> Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer a elit odio, non facilisis nulla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean rhoncus sem et ipsum mattis mattis. Nam suscipit eros nec ligula viverra nec commodo urna iaculis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+		</span>
+	</span>
+	
+	<script>
+		$(document).ready(function() {
+			$("span.openModal").click(function(){
+				new modal({
+					'debug'         : true,
+					'title'         : $(this).data('title'),
+					'sub_title'     : $(this).data('sub-title'),
+					'content'       : $(this).find('.modalContent').html(),
+					'footer'        : $(this).data('footer'),
+					'draggable'     : true,
+					'overlay'       : 0.75,
+					'overlay_exit'  : true,
+					'theme'         : $(this).data('theme'),
+					'center_resize' : true,
+					'minimizable'   : true
+				}).renderModal();
+			});
+		});
+	</script>
+</body>
+</html>

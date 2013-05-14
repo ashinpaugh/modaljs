@@ -1,0 +1,39 @@
+{
+  "author" : "ONEsite Development <support@onesite.com>",
+  "bugs" : {
+    "web" : "http://github.com/onesite/modaljs/issues/"
+  },
+  "dependencies" : {
+    "jquery"    : ">= 1.4",
+    "jquery-ui" : ">= 1.5"
+  },
+  "description" : "Lightweight jQuery modal.",
+  "directories" : {
+    "lib"  : "./lib",
+    "test" : "./test"
+  },
+  "licenses" : [
+    {
+      "type" : "Apache-2.0",
+      "url"  : "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "main" : "./lib/modal.js",
+  "maintainer" : [
+    {
+      "email" : "ashinpaugh@onesite.com",
+      "name"  : "Austin Shinpaugh"
+    },
+    {
+      "email" : "nthomas@onesite.com",
+      "name"  : "Nathan Thomas"
+    }
+  ],
+  "name" : "ModalJS",
+  "repository" : {
+    "type" : "git",
+    "url"  : "git://github.com/onesite/modaljs"
+  },
+  "version" : "1.7.85"
+}
+
